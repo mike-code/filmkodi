@@ -1,23 +1,119 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addons>
-<addon id="plugin.video.exodus" version="1.3.2" name="Exodus" provider-name="Exodus">
+<addon id="plugin.video.fanfilm" name="FanFilm - MrKnow"  version="2017.04.05.1" provider-name="mrknow" >
 	<requires>
-		<import addon="xbmc.python" version="2.19.0" />
-		<import addon="repository.exodus" version="1.0.0" />
-		<import addon="script.exodus.artwork" version="1.0.1" />
-		<import addon="script.module.urlresolver" version="3.0.0"/>
-		<import addon="script.module.metahandler" version="1.0.0" />
+		<import addon="xbmc.python" version="2.1.0" />
+		<import addon="script.module.requests"/>
+		<import addon="script.module.metahandler" />
 		<import addon="plugin.video.youtube" optional="true" />
+		<import addon="script.mrknow.urlresolver" />
+		<import addon="script.specto.media" />
+	</requires>
+	<extension point="xbmc.python.pluginsource" library="default.py">
+		<provides>video</provides>
+	</extension>
+	<extension point="xbmc.service" library="service.py" start="startup" />
+	<extension point="xbmc.addon.metadata">
+		<summary lang="en">FanFilm Alpha version</summary>
+		<description lang="en">FanFilm </description>
+		<disclaimer lang="en">The author does not host or distribute any of the content displayed by this addon. The author does not have any affiliation with the content provider.
+		</disclaimer>
+		<summary lang="pl">FanFilm wersja Alfa</summary>
+		<description lang="pl">FanFilm wersja Alfa - 50% nie działa.</description>
+		<disclaimer lang="pl">The author does not host or distribute any of the content displayed by this addon. The author does not have any affiliation with the content provider.
+		</disclaimer>
+		<forum>https://github.com/mike-code/filmkodi/issues</forum>
+		<source>https://github.com/mike-code/filmkodi/</source>
+		<website>http://filmkodi.com/</website>
+		<platform>all</platform>
+	</extension>
+</addon>
+
+<addon id="plugin.video.mrknow"
+       name="Filmy Online - mrknow.pl"
+       version="2017.03.29.2"
+       provider-name="mrknow">
+  <requires>
+    <import addon="xbmc.python" version="2.1.0"/>
+    <import addon="script.module.simplejson"/>
+    <import addon="script.module.requests" />
+    <import addon="script.mrknow.urlresolver" />
+	<import addon="script.module.beautifulsoup" version="3.2.1"/>
+    <import addon="script.common.plugin.cache"/>
+  </requires>
+  <extension point="xbmc.python.pluginsource" library="default.py">
+        <provides>video</provides>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <summary>Wtyczka MRKNOW</summary>
+    <description>Plugin pozwala nam ogladac filmy, telewizje, sport z polskich stron internetowych. Ikony do wtyczki dostarczył Michał Morawski email: mickpl[malpa]wp.pl. Więcej informacji na stronie http;//filmkodi.com </description>
+    <platform>all</platform>
+    <forum>https://github.com/mike-code/filmkodi/issues</forum>
+	<source>https://github.com/mike-code/filmkodi/</source>
+    <website>http://filmkodi.com/pl/wtyczka-filmy-online-mrknow/</website>
+  </extension>
+</addon>
+
+<addon id="plugin.video.mrknowtv" name="MrknowTV"  version="2017.03.06.1" provider-name="mrknow" >
+	<requires>
+		<import addon="xbmc.python" version="2.1.0" />
+		<import addon="script.module.requests" version="1.0.0" />
 	</requires>
 	<extension point="xbmc.python.pluginsource" library="default.py">
 		<provides>video</provides>
 	</extension>
 	<extension point="xbmc.addon.metadata">
-		<summary lang="en">Exodus</summary>
-		<description lang="en">Please visit www.tvaddons.ag for Exodus support and assistance! Kindly note that Exodus is not an official part of the media player you are running, and therefore not to be mentioned within official support channels, this addon has nothing to do with the media player itself, nor it’s intended use, it is simply a third party plugin which has been added to your system.</description>
-		<disclaimer lang="en">The author does not host or distribute any of the content displayed by this addon. The author does not have any affiliation with the content provider.</disclaimer>
+		<summary lang="en">MrknowTV - premium</summary>
+		<description lang="en">TV MrknowTV - only premium websites, Icons by Michal Morawski </description>
+		<disclaimer lang="en">Watch popular channels on your computer monitor, transmitting by users from all over the world.The author does not host or distribute any of the content displayed by this addon. The author does not have any affiliation with the content provider.
+		</disclaimer>
+		<summary lang="pl">MrknowTV - premium</summary>
+		<description lang="pl">Telewizja MrknowTV - tylko strony premium. Ikony przygotował Michal Morawski. Więcej informacji na stronie http;//filmkodi.com  </description>
+		<disclaimer lang="pl">The author does not host or distribute any of the content displayed by this addon. The author does not have any affiliation with the content provider.
+		</disclaimer>
+		<forum>https://github.com/mike-code/filmkodi/issues</forum>
+		<source>https://github.com/mike-code/filmkodi/</source>
+		<website>http://filmkodi.com/en/wtyczka-milenium-fork-genesis/</website>
 		<platform>all</platform>
 	</extension>
+</addon>
+
+<addon id="plugin.video.wizjatv" name="Wizja.TV [http://wizja.tv]" version="0.2.2" provider-name="mrknow">
+	<requires>
+		<import addon="xbmc.python" version="2.1.0" optional="true"/>
+	</requires>
+	<extension point="xbmc.python.pluginsource" library="addon.py">
+		<provides>video</provides>
+	</extension>
+	<extension point="xbmc.addon.metadata">
+		<summary>WIZJA.TV - Internet television, online tv</summary>
+		<summary lang="pl">WIzja.TV - Telewizja przez Internet</summary>
+		<description>Popular channels, live, 24 hours on your computer screen.</description>
+		<description lang="pl">Popularne kanały, na żywo, 24h na ekranie Twojego komputera.</description>
+		<disclaimer>Watch popular channels on your computer monitor, transmitting by users from all over the world.</disclaimer>
+		<disclaimer lang="pl">Oglądaj popularne kanały na monitorze Twojego komputera, transmitowane przez użytkowników z całego świata.</disclaimer>
+		<platform>all</platform>
+		<language>en pl</language>
+		<license>COMMON PUBLIC LICENSE (CPL) VERSION 1.0, 16 Apr 2009</license>
+		<website>http://wizja.tv/</website>
+	</extension>
+</addon>
+
+<addon id="plugin.video.xbmcfilm" name="xbmcfilm.com" version="2.1.0" provider-name="xbmcfilm.com">
+  <requires>
+    <import addon="xbmc.python" version="2.1.0"/>
+    <import addon="script.mrknow.urlresolver" />
+  </requires>
+  <extension point="xbmc.python.pluginsource"
+            library="default.py">
+        <provides>video</provides>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <summary>xbmcfilm.com</summary>
+    <description>XbmcFilm.com is a free service that lets anyone create a custom playlist of videos from the top video sites on the web. Now start building that playlist ... Website http://filmkodi.com
+    </description>
+    <platform>all</platform>
+  </extension>
 </addon>
 
 <addon id="repository.filmkodi.com" name="Filmkodi.com repository - MRKNOW" version="2.1.0" provider-name="Mrknow">
@@ -37,159 +133,17 @@
 	</extension>
 </addon>
 
-<addon id="plugin.video.vivere"
-       name="Vivere - Telewizja Filmkodi"
-       version="2016.05.08.2"
-       provider-name="mrknow">
-  <requires>
-    <import addon="xbmc.python" version="2.1.0"/>
-    <import addon="script.module.simplejson"/>
-    <import addon="script.module.requests" />
-  </requires>
-  <extension point="xbmc.python.pluginsource" library="default.py">
-        <provides>video</provides>
-  </extension>
-  <extension point="xbmc.addon.metadata">
-    <summary>Wtyczka MRKNOW</summary>
-    <description>Plugin pozwala nam ogladac filmy, telewizje, sport z polskich stron internetowych. Ikony do wtyczki dostarczył Michał Morawski email: mickpl[malpa]wp.pl</description>
-    <platform>all</platform>
-    <forum>https://github.com/mrknow/filmkodi/issues</forum>
-	<source>http://filmkodi.com/repository/</source>
-    <website>http://filmkodi.com/pl/wtyczka-filmy-online-mrknow/</website>
-
-  </extension>
-</addon>
-
-<addon id="plugin.video.mrknow"
-       name="Filmy Online - mrknow.pl"
-       version="2016.05.08.2"
-       provider-name="mrknow">
-  <requires>
-    <import addon="xbmc.python" version="2.1.0"/>
-    <import addon="script.module.simplejson"/>
-    <import addon="script.module.requests" />
-	<import addon="script.module.beautifulsoup" version="3.2.1"/>
-  </requires>
-  <extension point="xbmc.python.pluginsource" library="default.py">
-        <provides>video</provides>
-  </extension>
-  <extension point="xbmc.addon.metadata">
-    <summary>Wtyczka MRKNOW</summary>
-    <description>Plugin pozwala nam ogladac filmy, telewizje, sport z polskich stron internetowych. Ikony do wtyczki dostarczył Michał Morawski email: mickpl[malpa]wp.pl</description>
-    <platform>all</platform>
-    <forum>https://github.com/mrknow/filmkodi/issues</forum>
-	<source>http://filmkodi.com/repository/</source>
-    <website>http://filmkodi.com/pl/wtyczka-filmy-online-mrknow/</website>
-
-  </extension>
-</addon>
-
-<addon id="script.module.metahandler"
-     name="metahandler"
-     version="2.9.0"
-     provider-name="Eldorado">
-  <requires>
-    <import addon="xbmc.python" version="2.1.0" />
-    <import addon="script.module.simplejson" version="3.3.0"/>
-    <import addon="script.module.addon.common" version="2.0.0"/>
-    <import addon="script.module.myconnpy" version="1.1.6"/>
-  </requires>
-  <extension point="xbmc.python.module" library="lib" />
-  <extension point="xbmc.addon.metadata">
-    <summary lang="en">Downloads Artwork for TV shows, Movies and Music videos for addons and stores them in a local SQLITE database</summary>
-    <description lang="en">Queries, stores, and returns metadata for TV shows, Movies and Musicvideos. [CR]Sources:[CR]www.thetvdb.com[CR]www.themoviedb.org[CR]www.imdb.com</description>
-    <disclaimer lang="en"></disclaimer>
-    <language></language>
-    <platform>all</platform>
-    <license>GNU GENERAL PUBLIC LICENSE. Version 2, June 1991</license>
-    <forum></forum>
-    <website></website>
-    <email></email>
-    <source></source>
-  </extension>
-</addon>
-
-<!--suppress ALL -->
-<addon id="plugin.video.salts" version="2.0.39" name="Stream All The Sources" provider-name="tknorris">
-    <requires>
-        <import addon="xbmc.python" version="2.1.0"/>
-        <import addon="script.module.urlresolver" version="3.0.0"/>
-        <import addon="script.module.myconnpy" version="1.1.6" />
-    </requires>
-    <extension point="xbmc.python.pluginsource" library="default.py">
-        <provides>video</provides>
-    </extension>
-     <extension point="xbmc.service" library="service.py" start="startup"/>
-    <extension point="xbmc.addon.metadata">
-        <summary>Stream video from many difference sources</summary>
-        <description>This addon uses trakt.tv for most show and movie meta data and uses a variety of websites for hoster sources</description>
-        <platform>all</platform>
-        <website>http://tvaddons.ag/</website>
-		<forum>http://forums.tvaddons.ag/forums/180-TKNORRIS-RELEASE-REPOSITORY</forum>
-	</extension>
-</addon>
-
-<addon id="plugin.video.mrknowtv" name="Telewizja polska - premium"  version="2016.06.01.1" provider-name="mrknow" >
+<addon id="script.mrknow.urlresolver" name="Mrknow URLResolver" version="2017.04.04.2" provider-name="mrknow" >
 	<requires>
 		<import addon="xbmc.python" version="2.1.0" />
-		<import addon="script.module.requests" version="1.0.0" />
-		<import addon="script.module.metahandler" />
-		<import addon="plugin.video.youtube" optional="true" />
-
+		<import addon="script.module.six" />
 	</requires>
-	<extension point="xbmc.python.pluginsource" library="default.py">
-		<provides>video</provides>
-	</extension>
-	<extension point="xbmc.service" library="service.py" start="startup" />
+	<extension point="xbmc.python.module" library="lib" />
+	<extension point="xbmc.python.pluginsource" library="lib/default.py" />
 	<extension point="xbmc.addon.metadata">
-		<summary lang="en">Telewizja polska - premium</summary>
-		<description lang="en">Telewizja polska - premium </description>
-		<disclaimer lang="en">The author does not host or distribute any of the content displayed by this addon. The author does not have any affiliation with the content provider.
-		</disclaimer>
-		<forum>https://github.com/mrknow/filmkodi/issues</forum>
-		<source>http://filmkodi.com/repository/</source>
-		<website>http://filmkodi.com/en/wtyczka-specto-fork-genesis/</website>
 		<platform>all</platform>
-	</extension>
-</addon>
-
-<addon id="plugin.video.xbmcfilm" name="xbmcfilm.com" version="1.1.10" provider-name="xbmcfilm.com">
-  <requires>
-    <import addon="xbmc.python" version="2.1.0"/>
-  </requires>
-  <extension point="xbmc.python.pluginsource"
-            library="default.py">
-        <provides>video</provides>
-  </extension>
-  <extension point="xbmc.addon.metadata">
-    <summary>xbmcfilm.com</summary>
-    <description>XbmcFilm.com is a free service that lets anyone create a custom playlist of videos from the top video sites on the web. Now start building that playlist ...
-    </description>
-    <platform>all</platform>
-  </extension>
-</addon>
-
-<addon id="plugin.video.specto" name="Specto - ... Fork"  version="2016.05.10.5" provider-name="mrknow" >
-	<requires>
-		<import addon="xbmc.python" version="2.1.0" />
-		<import addon="script.module.requests" version="1.0.0" />
-		<import addon="script.module.metahandler" />
-		<import addon="plugin.video.youtube" optional="true" />
-
-	</requires>
-	<extension point="xbmc.python.pluginsource" library="default.py">
-		<provides>video</provides>
-	</extension>
-	<extension point="xbmc.service" library="service.py" start="startup" />
-	<extension point="xbmc.addon.metadata">
-		<summary lang="en">Mrknow fork of ...</summary>
-		<description lang="en">Mrknow fork of ..., support https://github.com/mrknow/filmkodi/issues.</description>
-		<disclaimer lang="en">The author does not host or distribute any of the content displayed by this addon. The author does not have any affiliation with the content provider.
-		</disclaimer>
-		<forum>https://github.com/mrknow/filmkodi/issues</forum>
-		<source>http://filmkodi.com/repository/</source>
-		<website>http://filmkodi.com/en/wtyczka-specto-fork-genesis/</website>
-		<platform>all</platform>
+		<summary lang="en">This addon is almost exact copy Urlresolver from Tknorris repository https://github.com/tknorris/script.module.urlresolver. Resolve common video host URL's to be playable in XBMC/Kodi. Website http://filmkodi.com . Our suport forum https://github.com/mike-code/filmkodi/issues. </summary>
+		<description lang="en">This addon is almost exact copy Urlresolver from Tknorris repository https://github.com/tknorris/script.module.urlresolver Resolve common video host URL's to be playable in XBMC/Kodi, simplify addon development of video plugins requiring multi video hosts.</description>
 	</extension>
 </addon>
 </addons>
